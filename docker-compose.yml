@@ -1,0 +1,15 @@
+services:
+  db:
+    image: pgvector/pgvector:pg17
+    container_name: dentai-db
+    environment:
+      POSTGRES_USER: dentai
+      POSTGRES_PASSWORD: dentai
+      POSTGRES_DB: dentai
+    ports:
+      - "5432:5432"
+    volumes:
+      - dentai-data:/var/lib/postgresql/data
+
+volumes:
+  dentai-data:
